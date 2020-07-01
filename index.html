@@ -24,9 +24,9 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua.
       </p>
-      <button class="hero__button">Go to the store</button>
+      <a class="hero__button" href="#fruits">Go to the shop</a>
     </section>
-    <section class="fruits">
+    <section class="fruits" id="fruits">
       <div class="fruit">
         <img src="img/apple-pic2.png" alt="" class="fruit__img">
         <div class="fruit__text">
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="fruit">
-        <!-- <img src="img/grapes.png" alt="" class="fruit__img"> -->
+        <img src="img/grapes.png" style="order: 1" alt="" class="fruit__img">
         <div class="fruit__text">
           <h3 class="fruit__heading">Grapes</h3>
           <p class="fruit__desc">
@@ -49,7 +49,7 @@
             qui, purto expetendis cotidieque quo cu, veri persius vituperata ei nec.
           </p>
         </div>
-        <img src="img/grapes.png" alt="" class="fruit__img">
+        <!-- <img src="img/grapes.png" alt="" class="fruit__img"> -->
       </div>
       <div class="fruit">
         <img src="img/watermelon-pic.png" alt="" class="fruit__img">
@@ -66,13 +66,18 @@
     </section>
   </main>
   <footer>
-    <form class="form" action="thankyou.html">
+    
+    <iframe name="hidden-iframe" id="hidden-iframe" style="display:none;"></iframe>
+    <form class="form" id="form" action="https://usebasin.com/f/b129c3a358f6" target="hidden-iframe" method="POST">
       <label for="name">Your name</label>
-      <input class="form__field" type="text" name="" id="name">
+      <input type="text" class="form__field" name="name" id="name" required>
+      <p class="form__error form__error--name"></p>
       <label for="email">Your email</label>
-      <input class="form__field" type="email" name="" id="email">
+      <input class="form__field" type="email" name="email" id="email" required>
+      <p class="form__error form__error--email"></p>
       <label for="request">Your request</label>
-      <textarea class="form__field" name="request" id="request"></textarea>
+      <textarea class="form__field" name="request" id="request" required></textarea>
+      <p class="form__error form__error--request"></p>
       <button type="submit">Submit</button>
     </form>
     <div class="contacts">
@@ -82,7 +87,7 @@
         WONDERLAND <br>
         79059
       </address>
-      +38012341249
+      <a href="tel:+38012341249">+38012341249</a>
       <div class="media">
         <a href="https://facebook.com"><img src="img/icons/facebook.svg" alt="facebook" class="medium"></a>
         <a href="https://instagram.com"><img src="img/icons/instagram.svg" alt="instagram" class="medium"></a>
@@ -90,5 +95,7 @@
     </div>
   </footer>
 </body>
+
+<script src="index.js"></script>
 
 </html>

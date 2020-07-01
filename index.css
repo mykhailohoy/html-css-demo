@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
-
 html, body {
   font-family: 'Open Sans', Helvetica, Arial;
   line-height: 1.4;
   font-size: 16px;
   color: #111;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 img {
@@ -18,28 +22,31 @@ section {
 .hero {
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/bg_copy.jpg");
   background-size: cover;
-  height: 265px;
-  overflow: hidden;
-  padding: 15% 50% 15% 10%;
+  padding: 16% 50% 16% 10%;
   color: #fff;
+  width: 100%;
 }
 
 .hero__heading {
   margin-bottom: 1rem;
 }
+
 .hero__heading h2 {
   font-size: 2.1rem;
   text-transform: capitalize;
   letter-spacing: 1px;
 }
+
 .hero__heading h2:first-of-type {
   text-transform: uppercase;
   font-size: 1.6rem;
   letter-spacing: 2px;
 }
+
 .hero__desc {
   margin-bottom: 1.2rem;
 }
+
 .hero__button {
   text-transform: uppercase;
   border: none;
@@ -50,7 +57,9 @@ section {
   color: inherit;
   font-size: .8rem;
   transition: .2s ease-in-out;
+  text-decoration: none;
 }
+
 .hero__button:hover {
   background: rgb(255, 115, 0);
 }
@@ -61,18 +70,14 @@ section {
 
 .fruit {
   display: flex;
-  height: 400px;
+  /* height: 400px; */
   margin: 50px 0;
   justify-content: space-between;
-  /* align-items: center;/ */
 }
 
-/* .fruit:nth-child(2) {
-  grid-column: span 2, 3;
-} */
-
 .fruit__img {
-  height: 80%;
+  height: 70vw;
+  max-height: 350px;
   margin-right: 10%;
 }
 
@@ -92,6 +97,53 @@ section {
 
 .fruit:nth-child(2) .fruit__text {
   text-align: right;
+}
+
+@media (max-width: 900px) {
+  .fruits {
+    padding: 5% 7%;
+  }
+  .fruit__img {
+    margin-right: 7%;
+  }
+  .fruit:nth-child(2) .fruit__img {
+    margin-left: 7%;
+  }
+}
+
+@media (max-width: 700px) {
+  .fruit {
+    flex-direction: column;
+    align-items: center;
+  }
+  .fruit__img {
+    order: 1;
+    margin: 0 !important;
+  }
+  .fruit__text {
+    text-align: justify !important;
+    margin: 0 auto 30px;
+  }
+  footer {
+    flex-direction: column;
+  }
+  .form {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  html, body {
+    font-size: 12px;
+  }
+  .hero {
+    padding: 15% 10%;
+  }
+  .hero__heading h2:first-of-type {
+    font-size: 2.1rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+  }
 }
 
 footer {
@@ -148,15 +200,24 @@ footer {
 }
 
 .form__field {
-  width: 235px;
+  max-width: 235px;
+  width: 100%;
   border-radius: 4px;
   outline: none !important;
   border: none;
 }
 
-
 .contacts {
   flex: 1
+}
+
+.contacts a {
+  text-decoration: none;
+  color: #eee;
+}
+
+.contacts a:hover {
+  text-decoration: underline;
 }
 
 .medium {
